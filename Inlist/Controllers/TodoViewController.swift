@@ -127,11 +127,15 @@ class TodoViewController: UITableViewController {
             self.tableView.reloadData()
         }
         
+        let quitAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        quitAction.setValue(UIColor.red, forKey: "titleTextColor")
+        
         alert.addTextField(){ (textF) in
             textF.placeholder = "Nombre del elemento"
             textField = textF
         }
         alert.addAction(action)
+        alert.addAction(quitAction)
         present(alert, animated: true)
         
         

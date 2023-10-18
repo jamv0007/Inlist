@@ -52,12 +52,16 @@ class CategoryViewController: UITableViewController {
             
         }
         
+        let quitAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        quitAction.setValue(UIColor.red, forKey: "titleTextColor")
+        
         alert.addTextField(){ (textF) in
             textF.placeholder = "Nombre de la categoria"
             textField = textF
         }
         
         alert.addAction(action)
+        alert.addAction(quitAction)
         present(alert, animated: true)
     
     }
